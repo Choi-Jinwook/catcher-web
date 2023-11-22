@@ -35,3 +35,4 @@ export { default as Template } from "./Template";
 export { default as TemplateButton } from "./TemplateButton";
 export { default as TemplateRecommend } from "./TemplateRecommend";
 export { default as Title } from "./Title";
+export { default as WritingPlanExisted } from "./WritingPlanExisted";

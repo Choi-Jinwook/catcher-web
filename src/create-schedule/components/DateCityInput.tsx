@@ -17,18 +17,29 @@ const DateCityInput = ({
 
   return (
     <div className="relative inline-block">
-      <DateCityHandler callType={callType} />
-      <input
-        readOnly
-        className="w-[301px] h-[55px] border border-[#E0E0E0] rounded-[5px] px-[19px]"
-        type="text"
-        placeholder={placeholder}
-        value={
-          answerType && callType.includes("date")
-            ? answer[answerType]
-            : answer.city
-        }
-      />
+      {callType.includes("date") ? (
+        <>
+          <DateCityHandler callType={callType} />
+          <input
+            readOnly
+            className="w-[301px] h-[55px] border border-[#E0E0E0] rounded-[5px] px-[19px]"
+            type="text"
+            placeholder={placeholder}
+            value={answer[answerType!]}
+          />
+        </>
+      ) : (
+        <>
+          <DateCityHandler callType={callType} />
+          <input
+            readOnly
+            className="w-[301px] h-[55px] border border-[#E0E0E0] rounded-[5px] px-[19px]"
+            type="text"
+            placeholder={placeholder}
+            value={answer.city}
+          />
+        </>
+      )}
     </div>
   );
 };

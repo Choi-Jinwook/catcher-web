@@ -1,11 +1,11 @@
 import { SCHEDULE_TITLE } from "@create-schedule/constants";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { scheduleAnswers } from "@shared/recoil";
 import RemainChar from "./RemainChar";
 import ScheduleTitle from "./ScheduleTitle";
 
 const PlanTitleInput = () => {
-  const [{ title }, setTitle] = useRecoilState(scheduleAnswers);
+  const setTitle = useSetRecoilState(scheduleAnswers);
 
   const handleTitle = (title: string) => {
     setTitle((prev) => ({ ...prev, title }));
@@ -21,7 +21,7 @@ const PlanTitleInput = () => {
         maxLength={40}
         onChange={({ target: { value } }) => handleTitle(value)}
       />
-      <RemainChar title={title} />
+      <RemainChar />
     </div>
   );
 };

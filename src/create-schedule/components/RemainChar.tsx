@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useRecoilValue } from "recoil";
-import { scheduleAnswers } from "@shared/recoil";
 
-const RemainChar = () => {
+interface RemainCharProps {
+  title: string;
+}
+
+const RemainChar = ({ title }: RemainCharProps) => {
   const [remainChar, setRemainChar] = useState(40);
-  const { title } = useRecoilValue(scheduleAnswers);
 
   useEffect(() => {
     setRemainChar(() => {
